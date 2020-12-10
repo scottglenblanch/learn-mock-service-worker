@@ -7,7 +7,8 @@ function useAppHook() {
   const [list, setList ] = useState([])
 
   const initialLoad = async () => {
-    const newList = await fetchList();
+    const newList = await fetchList()
+
     setList(newList);
   }
 

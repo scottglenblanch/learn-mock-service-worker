@@ -1,3 +1,15 @@
+import { get as httpGet } from 'axios';
+
+
 export const fetchList = async () => {
-    return (await fetch('http://localhost:8080/person-list')) ?? []
+
+    let list;
+
+    try {
+        list = (await httpGet('http://localhost:8080/person-list'))?.data ?? []
+    } catch(e) {
+        list = []
+    }
+
+    return list;
 }
